@@ -39,17 +39,17 @@ a_reviews.review()
 
 
 a_df = pd.DataFrame(np.array(a_reviews.reviews), columns=['review'])
-a__df2 = a_df.join(pd.DataFrame(a_df.pop('review').tolist()))
+a_df2_ = a_df.join(pd.DataFrame(a_df.pop('review').tolist()))
 
-a__df2.drop(columns={'isEdited'},inplace = True)
-a__df2.insert(loc=0, column='source', value='App Store')
-a__df2['developer_response_date'] = None
-a__df2['thumbs_up'] = None
-a__df2.insert(loc=1, column='review_id', value=[uuid.uuid4() for _ in range(len(a__df2.index))])
-a__df2.rename(columns= {'review': 'review_description','userName': 'user_name', 'date': 'review_date','title': 'review_title', 'developerResponse': 'developer_response'},inplace = True)
-a__df2 = a__df2.where(pd.notnull(a__df2), None)
+a_df2_.drop(columns={'isEdited'},inplace = True)
+a_df2_.insert(loc=0, column='source', value='App Store')
+a_df2_['developer_response_date'] = None
+a_df2_['thumbs_up'] = None
+a_df2_.insert(loc=1, column='review_id', value=[uuid.uuid4() for _ in range(len(a_df2_.index))])
+a_df2_.rename(columns= {'review': 'review_description','userName': 'user_name', 'date': 'review_date','title': 'review_title', 'developerResponse': 'developer_response'},inplace = True)
+a_df2_ = a_df2_.where(pd.notnull(a_df2_), None)
 
-a_df2 = pd.concat([g_df2,a__df2])
+a_df2 = pd.concat([g_df2,a_df2_])
 
 
 a_df2['date'] = pd.to_datetime(a_df2['review_date']).dt.floor('D')
