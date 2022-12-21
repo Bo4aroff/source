@@ -52,9 +52,14 @@ a_df2_ = a_df2_.where(pd.notnull(a_df2_), None)
 a_df2 = pd.concat([g_df2,a_df2_])
 
 
-a_df2['date'] = pd.to_datetime(a_df2['review_date']).dt.floor('D')
+a_df2['review_date'] = a_df2['review_date'].dt.strftime('%m/%d/%Y')
+a_df2['date'] = pd.to_datetime(a_df2['review_date']).dt.floor('d')
+
 a_df2['month'] = a_df2['date'].dt.month
 a_df2['year'] = a_df2['date'].dt.year
+
+a_df2.sort_values(by='review_date', inplace=True)
+
 a_df2.loc[a_df2['rating'] < 4, 'рейтинг'] = 'Отрицательный'
 a_df2.loc[a_df2['rating'] >= 4, 'рейтинг'] = 'Положительный'
 a_df2.loc[a_df2['rating'] > 0, 'value'] = 1
@@ -125,12 +130,13 @@ fig_date = px.bar(df_selection,
 st.plotly_chart(fig_date)
 
 fig_new = px.bar(df_selection,
-                 x='month',
-                 y='value',
-                 color='рейтинг',
-                 range_y=[0,35000],
-                 animation_frame='month',
-                 animation_group='рейтинг')
+                 x="рейтинг",
+                 y="value",
+                 title="<b>Динамика по дням</b>",
+                 color="рейтинг",
+                 animation_frame="review_date",
+                 animation_group="рейтинг",
+                )
 fig_new.update_layout(width=800)
 st.write(fig_new)
 
