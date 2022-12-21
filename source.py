@@ -6,7 +6,7 @@ import numpy as np
 import plotly.express as px
 import base64
 from io import StringIO, BytesIO
-import streamlit as st
+
 
 def generate_excel_download_link(df_2):
     # Credit Excel: https://discuss.streamlit.io/t/how-to-add-a-download-excel-csv-function-to-a-button/4474/5
@@ -81,7 +81,7 @@ raiting = st.sidebar.multiselect("Рейтинг", options=a_df2['рейтинг
 
 
 # month_ = st.slider("Month", max_value=max(a_df2['month'].unique().tolist()), min_value=min(a_df2['month'].unique().tolist()), value=(max(a_df2['month'].unique().tolist()), min(a_df2['month'].unique().tolist())))
-df_selection = a_df2.query("рейтинг == @raiting & year == @year_ & month == @month_")
+df_selection = a_df2.query("рейтинг == @raiting & year == @year_ & month == @month_" & source == @market)
 
 st.title(":bar_chart: Основные показатели")
 st.markdown('##')
