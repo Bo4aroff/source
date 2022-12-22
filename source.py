@@ -107,8 +107,7 @@ fig_rating = px.bar(rating_by_value,
                     y=rating_by_value.index,
                     orientation="h",
                     title="<b>Оценки</b>",
-                    color_discrete_sequence=["#0083B8"] * len(rating_by_value),
-                    template="plotly_white",
+                    color='source',
                     )
 
 st.plotly_chart(fig_rating)
