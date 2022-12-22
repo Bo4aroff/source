@@ -108,6 +108,9 @@ fig_rating = px.bar(df_selection,
                     orientation="h",
                     title="<b>Оценки</b>",
                     color='рейтинг',
+                    color_discrete_map={
+                "Отрицательный": "red",
+                "Положительный": "green",},
                     )
 
 st.plotly_chart(fig_rating)
