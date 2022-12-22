@@ -70,7 +70,7 @@ import streamlit as st
 
 
 
-st.set_page_config(page_title='Отзывы_IOS', layout='wide')
+st.set_page_config(page_title='Отзывы_SM', layout='wide')
 
 
 year_options = a_df2['year'].unique().tolist()
@@ -120,7 +120,6 @@ fig_month = px.bar(df_selection,
                   orientation="v",
                   title="<b>Рейтинг за месяц</b>",
                   color="рейтинг",
-                  template="plotly_white",
                   )
 
 
