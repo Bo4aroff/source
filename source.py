@@ -104,10 +104,10 @@ st.markdown("---")
 # rating_by_value = (df_selection.groupby(by=['рейтинг']).sum()[['value']].sort_values(by="value"))
 fig_rating = px.bar(df_selection,
                     x="value",
-                    y='рейтинг',
+                    y='source',
                     orientation="h",
                     title="<b>Оценки</b>",
-                    color='source',
+                    color='рейтинг',
                     )
 
 st.plotly_chart(fig_rating)
