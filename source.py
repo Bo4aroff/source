@@ -102,7 +102,7 @@ st.markdown("---")
 
 
 # rating_by_value = (df_selection.groupby(by=['рейтинг']).sum()[['value']].sort_values(by="value"))
-fig_rating = px.bar(rating_by_value,
+fig_rating = px.bar(df_selection,
                     x="value",
                     y='рейтинг',
                     orientation="h",
