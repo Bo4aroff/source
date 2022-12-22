@@ -126,19 +126,31 @@ fig_date = px.bar(df_selection,
                   )
 
 
-
 st.plotly_chart(fig_date)
 
-fig_new = px.bar(df_selection,
-                 x="рейтинг",
-                 y="value",
-                 title="<b>Динамика по дням</b>",
-                 color="рейтинг",
-                 animation_frame="review_date",
-                 animation_group="рейтинг",
-                )
-fig_new.update_layout(width=800)
-st.write(fig_new)
+fig_month = px.bar(df_selection,
+                  x="month",
+                  y="value",
+                  orientation="v",
+                  title="<b>Рейтинг за месяц</b>",
+                  color_discrete_sequence=["#0083B8"] * len('value'),
+                  template="plotly_white",
+                  )
+
+
+st.plotly_chart(fig_month)
+
+
+# fig_new = px.bar(df_selection,
+#                  x="рейтинг",
+#                  y="value",
+#                  title="<b>Динамика по дням</b>",
+#                  color="рейтинг",
+#                  animation_frame="review_date",
+#                  animation_group="рейтинг",
+#                 )
+# fig_new.update_layout(width=800)
+# st.write(fig_new)
 
 if st.checkbox('Сформировать файл для скачивания'):
 
