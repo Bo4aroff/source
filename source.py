@@ -101,10 +101,10 @@ st.subheader(f"{average_raiting} {star_raiting}")
 st.markdown("---")
 
 
-rating_by_value = (df_selection.groupby(by=['рейтинг']).sum()[['value']].sort_values(by="value"))
+# rating_by_value = (df_selection.groupby(by=['рейтинг']).sum()[['value']].sort_values(by="value"))
 fig_rating = px.bar(rating_by_value,
                     x="value",
-                    y=rating_by_value.index,
+                    y='рейтинг',
                     orientation="h",
                     title="<b>Оценки</b>",
                     color='source',
