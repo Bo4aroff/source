@@ -113,6 +113,20 @@ fig_rating = px.bar(rating_by_value,
 
 st.plotly_chart(fig_rating)
 
+
+fig_month = px.bar(df_selection,
+                  x="month",
+                  y="value",
+                  orientation="v",
+                  title="<b>Рейтинг за месяц</b>",
+                  color="рейтинг",
+                  color_discrete_sequence=["#0083B8"] * len('value'),
+                  template="plotly_white",
+                  )
+
+
+st.plotly_chart(fig_month)
+
 st.markdown("---")
 
 # date_by_value = (df_selection.groupby(by=['date']).sum()[['value']].sort_values(by='date'))
@@ -128,18 +142,7 @@ fig_date = px.bar(df_selection,
 
 st.plotly_chart(fig_date)
 
-fig_month = px.bar(df_selection,
-                  x="month",
-                  y="value",
-                  orientation="v",
-                  title="<b>Рейтинг за месяц</b>",
-                  color="рейтинг",
-                  color_discrete_sequence=["#0083B8"] * len('value'),
-                  template="plotly_white",
-                  )
 
-
-st.plotly_chart(fig_month)
 
 
 # fig_new = px.bar(df_selection,
