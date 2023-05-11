@@ -6,3 +6,4 @@ google-play-scraper==1.2.2
 uuid==1.30
 plotly-express==0.4.1
 numpy==1.21.6
+altair==4.0
