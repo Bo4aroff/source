@@ -168,4 +168,4 @@ if st.checkbox('Сформировать файл для скачивания'):
 if st.checkbox('Скачать файл Excel'):
 
     st.subheader('ССЫЛКА ДЛЯ СКАЧИВАНИЯ')
-    generate_excel_download_link(df_2, encoding="utf-8")
+    generate_excel_download_link(df_2)
