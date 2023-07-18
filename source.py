@@ -164,7 +164,7 @@ st.plotly_chart(fig_date)
 
 if st.checkbox('Сформировать файл для скачивания'):
 
-    df_2 = st.dataframe(df_selection)
+    df_2 = st.dataframe(df_selection, encoding="utf-8")
 if st.checkbox('Скачать файл Excel'):
 
     st.subheader('ССЫЛКА ДЛЯ СКАЧИВАНИЯ')
