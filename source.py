@@ -75,7 +75,7 @@ st.set_page_config(page_title='Отзывы_SM', layout='wide')
 
 
 year_options = a_df2['year'].unique().tolist()
-year_options1 = year_options..sort(reverse=True)
+year_options1 = year_options.sort(reverse=True)
 month_options = a_df2['month'].unique().tolist()
 
 st.sidebar.header('Фильтры:')
