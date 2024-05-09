@@ -74,7 +74,7 @@ import streamlit as st
 st.set_page_config(page_title='Отзывы_SM', layout='wide')
 
 # year_options = a_df2['year'].unique().tolist()
-year_options = a_df2['year']=2024.unique().tolist()
+year_options = a_df2['year']=2024
 month_options = a_df2['month'].unique().tolist()
 
 st.sidebar.header('Фильтры:')
